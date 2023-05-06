@@ -1,0 +1,1212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Data Grid</title>
+    <meta content="Data Grid" name="description" />
+    <!-- <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    /> -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css"
+    />
+    <link rel="stylesheet" href="./assets/styles/style.css" />
+  </head>
+  <body>
+    <section id="demo">
+      <div class="custom-container main-body">
+        <div class="table-main">
+          <div class="flex-button-and-search-form">
+            <button type="button" class="btn btn-light btn-export">
+              <i class="fa-solid fa-download"></i> <span>EXPORT</span>
+            </button>
+            <form
+              class="form-inline d-flex justify-content-center md-form form-sm m-0"
+            >
+              <input
+                class="form-control form-control-sm mr-3 w-75"
+                type="text"
+                placeholder="Search"
+                aria-label="Search"
+              />
+              <i
+                class="search-icon fas fa-search active"
+                aria-hidden="true"
+              ></i>
+            </form>
+          </div>
+          <div class="sortable-list-container-custom">
+            <div class="sortable-table-header">
+              <div class="sortable-row sortable-row-size">
+                <div class="sortable-table-actions" style="width: 110px"></div>
+                <div class="sortable-table-actions" style="width: 140px">
+                  Name
+                </div>
+                <div class="sortable-table-actions" style="width: 80px">
+                  Gender
+                </div>
+                <div class="sortable-table-actions" style="width: 80px">
+                  Weight
+                </div>
+                <div class="sortable-table-actions" style="width: 130px">
+                  Birthday
+                </div>
+                <div class="sortable-table-actions" style="width: 300px">
+                  BIO
+                </div>
+                <div class="sortable-table-actions" style="width: 80px">
+                  Status
+                </div>
+              </div>
+            </div>
+            <ol
+              class="sortable ui-sortable mjs-nestedSortable-branch mjs-nestedSortable-expanded p-0 m-0"
+            >
+              <li
+                class="mjs-nestedSortable-branch mjs-nestedSortable-expanded"
+                id="menuItem_1"
+              >
+                <div class="data-list-wrapper">
+                  <div class="sortable-row sortable-row-size">
+                    <div class="cell draggableButton">
+                      <i class="fa-solid fa-grip-vertical"></i>
+                    </div>
+                    <div class="cell">
+                      <span
+                        title="Click to show/hide children"
+                        class="disclose ui-icon ui-icon-minusthick"
+                      >
+                        <span></span>
+                      </span>
+                    </div>
+                    <div class="cell">
+                      <div class="save-btns">
+                        <i class="settings-btn fa-solid fa-gear"></i>
+                        <i class="save-list-btn fa-solid fa-floppy-disk"></i>
+                      </div>
+                    </div>
+                    <div class="cell" style="width: 140px">
+                      <span class="show-selected-data">Lorem Ipsum 1</span>
+                      <input
+                        class="edit-sheet-data"
+                        type="text"
+                        value="Lorem Ipsum 1"
+                      />
+                    </div>
+                    <div class="cell" style="width: 80px">
+                      <span class="show-selected-data">Male</span>
+                      <select class="edit-sheet-data">
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                      </select>
+                    </div>
+                    <div class="cell" style="width: 80px">
+                      <span class="show-selected-data">74</span>
+                      <input class="edit-sheet-data" type="number" value="74" />
+                    </div>
+                    <div class="cell" style="width: 130px">
+                      <span class="show-selected-data">1990-01-01</span>
+                      <input class="edit-sheet-data" type="date" />
+                    </div>
+                    <div class="cell" style="width: 300px">
+                      <div class="text-table-data-wrapper">
+                        <span class="show-selected-data text-table-data"
+                          >Lorem, ipsum dolor sit amet consectetur adipisicing
+                          elit.</span
+                        >
+                      </div>
+                      <input
+                        class="edit-sheet-data"
+                        type="text"
+                        value="Lorem, ipsum dolor sit amet consectetur adipisicing elit."
+                      />
+                    </div>
+                    <div class="cell" style="width: 80px">
+                      <span class="show-selected-data">false</span>
+                      <div class="edit-sheet-data">
+                        <label class="switch">
+                          <input
+                            type="checkbox"
+                            class="text-align-center"
+                            value="false"
+                          /><span class="slider"></span>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="cell table-action-btns">
+                      <button class="move-up">Move Up</button>
+                      <button class="move-down">Move Down</button>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <li
+                class="mjs-nestedSortable-branch mjs-nestedSortable-expanded"
+                id="menuItem_2"
+              >
+                <div class="data-list-wrapper">
+                  <div class="sortable-row sortable-row-size">
+                    <div class="cell draggableButton">
+                      <i class="fa-solid fa-grip-vertical"></i>
+                    </div>
+                    <div class="cell">
+                      <span
+                        title="Click to show/hide children"
+                        class="disclose ui-icon ui-icon-minusthick"
+                      >
+                        <span></span>
+                      </span>
+                    </div>
+                    <div class="cell">
+                      <div class="save-btns">
+                        <i class="settings-btn fa-solid fa-gear"></i>
+                        <i class="save-list-btn fa-solid fa-floppy-disk"></i>
+                      </div>
+                    </div>
+                    <div class="cell" style="width: 140px">
+                      <span class="show-selected-data">Lorem Ipsum 2</span>
+                      <input
+                        class="edit-sheet-data"
+                        type="text"
+                        value="Lorem Ipsum 2"
+                      />
+                    </div>
+                    <div class="cell" style="width: 80px">
+                      <span class="show-selected-data">Male</span>
+                      <select class="edit-sheet-data">
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                      </select>
+                    </div>
+                    <div class="cell" style="width: 80px">
+                      <span class="show-selected-data">76</span>
+                      <input class="edit-sheet-data" type="number" value="76" />
+                    </div>
+                    <div class="cell" style="width: 130px">
+                      <span class="show-selected-data">1990-01-01</span>
+                      <input class="edit-sheet-data" type="date" />
+                    </div>
+                    <div class="cell" style="width: 300px">
+                      <div class="text-table-data-wrapper">
+                        <span class="show-selected-data text-table-data"
+                          >Lorem, ipsum dolor sit amet consectetur adipisicing
+                          elit.</span
+                        >
+                      </div>
+                      <input
+                        class="edit-sheet-data"
+                        type="text"
+                        value="Lorem, ipsum dolor sit amet consectetur adipisicing elit."
+                      />
+                    </div>
+                    <div class="cell" style="width: 80px">
+                      <span class="show-selected-data">false</span>
+                      <div class="edit-sheet-data">
+                        <label class="switch">
+                          <input type="checkbox" value="false" /><span
+                            class="slider"
+                          ></span>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="cell table-action-btns">
+                      <button class="move-up">Move Up</button>
+                      <button class="move-down">Move Down</button>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <li
+                class="mjs-nestedSortable-branch mjs-nestedSortable-expanded"
+                id="menuItem_3"
+              >
+                <div class="data-list-wrapper">
+                  <div class="sortable-row sortable-row-size">
+                    <div class="cell draggableButton">
+                      <i class="fa-solid fa-grip-vertical"></i>
+                    </div>
+                    <div class="cell">
+                      <span
+                        title="Click to show/hide children"
+                        class="disclose ui-icon ui-icon-minusthick"
+                      >
+                        <span></span>
+                      </span>
+                    </div>
+                    <div class="cell">
+                      <div class="save-btns">
+                        <i class="settings-btn fa-solid fa-gear"></i>
+                        <i class="save-list-btn fa-solid fa-floppy-disk"></i>
+                      </div>
+                    </div>
+                    <div class="cell" style="width: 140px">
+                      <span class="show-selected-data">Lorem Ipsum 3</span>
+                      <input
+                        class="edit-sheet-data"
+                        type="text"
+                        value="Lorem Ipsum 3"
+                      />
+                    </div>
+                    <div class="cell" style="width: 80px">
+                      <span class="show-selected-data">Male</span>
+                      <select class="edit-sheet-data">
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                      </select>
+                    </div>
+                    <div class="cell" style="width: 80px">
+                      <span class="show-selected-data">74</span>
+                      <input class="edit-sheet-data" type="number" value="74" />
+                    </div>
+                    <div class="cell" style="width: 130px">
+                      <span class="show-selected-data">1990-01-01</span>
+                      <input class="edit-sheet-data" type="date" />
+                    </div>
+                    <div class="cell" style="width: 300px">
+                      <div class="text-table-data-wrapper">
+                        <span class="show-selected-data text-table-data"
+                          >Lorem, ipsum dolor sit amet consectetur adipisicing
+                          elit.</span
+                        >
+                      </div>
+                      <input
+                        class="edit-sheet-data"
+                        type="text"
+                        value="Lorem, ipsum dolor sit amet consectetur adipisicing elit."
+                      />
+                    </div>
+                    <div class="cell" style="width: 80px">
+                      <span class="show-selected-data">false</span>
+                      <div class="edit-sheet-data">
+                        <label class="switch">
+                          <input type="checkbox" value="false" /><span
+                            class="slider"
+                          ></span>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="cell table-action-btns">
+                      <button class="move-up">Move Up</button>
+                      <button class="move-down">Move Down</button>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <li
+                class="mjs-nestedSortable-branch mjs-nestedSortable-expanded"
+                id="menuItem_4"
+              >
+                <div class="data-list-wrapper">
+                  <div class="sortable-row sortable-row-size">
+                    <div class="cell draggableButton">
+                      <i class="fa-solid fa-grip-vertical"></i>
+                    </div>
+                    <div class="cell">
+                      <span
+                        title="Click to show/hide children"
+                        class="disclose ui-icon ui-icon-minusthick"
+                      >
+                        <span></span>
+                      </span>
+                    </div>
+                    <div class="cell">
+                      <div class="save-btns">
+                        <i class="settings-btn fa-solid fa-gear"></i>
+                        <i class="save-list-btn fa-solid fa-floppy-disk"></i>
+                      </div>
+                    </div>
+                    <div class="cell" style="width: 140px">
+                      <span class="show-selected-data">Lorem Ipsum 4</span>
+                      <input
+                        class="edit-sheet-data"
+                        type="text"
+                        value="Lorem Ipsum 4"
+                      />
+                    </div>
+                    <div class="cell" style="width: 80px">
+                      <span class="show-selected-data">Male</span>
+                      <select class="edit-sheet-data">
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                      </select>
+                    </div>
+                    <div class="cell" style="width: 80px">
+                      <span class="show-selected-data">74</span>
+                      <input class="edit-sheet-data" type="number" value="74" />
+                    </div>
+                    <div class="cell" style="width: 130px">
+                      <span class="show-selected-data">1990-01-01</span>
+                      <input class="edit-sheet-data" type="date" />
+                    </div>
+                    <div class="cell" style="width: 300px">
+                      <div class="text-table-data-wrapper">
+                        <span class="show-selected-data text-table-data"
+                          >Lorem, ipsum dolor sit amet consectetur adipisicing
+                          elit.</span
+                        >
+                      </div>
+                      <input
+                        class="edit-sheet-data"
+                        type="text"
+                        value="Lorem, ipsum dolor sit amet consectetur adipisicing elit."
+                      />
+                    </div>
+                    <div class="cell" style="width: 80px">
+                      <span class="show-selected-data">true</span>
+                      <div class="edit-sheet-data">
+                        <label class="switch">
+                          <input type="checkbox" value="true" /><span
+                            class="slider"
+                          ></span>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="cell table-action-btns">
+                      <button class="move-up">Move Up</button>
+                      <button class="move-down">Move Down</button>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <li
+                class="mjs-nestedSortable-branch mjs-nestedSortable-expanded"
+                id="menuItem_5"
+              >
+                <div class="data-list-wrapper">
+                  <div class="sortable-row sortable-row-size">
+                    <div class="cell draggableButton">
+                      <i class="fa-solid fa-grip-vertical"></i>
+                    </div>
+                    <div class="cell">
+                      <span
+                        title="Click to show/hide children"
+                        class="disclose ui-icon ui-icon-minusthick"
+                      >
+                        <span></span>
+                      </span>
+                    </div>
+                    <div class="cell">
+                      <div class="save-btns">
+                        <i class="settings-btn fa-solid fa-gear"></i>
+                        <i class="save-list-btn fa-solid fa-floppy-disk"></i>
+                      </div>
+                    </div>
+                    <div class="cell" style="width: 140px">
+                      <span class="show-selected-data">Lorem Ipsum 5</span>
+                      <input
+                        class="edit-sheet-data"
+                        type="text"
+                        value="Lorem Ipsum 5"
+                      />
+                    </div>
+                    <div class="cell" style="width: 80px">
+                      <span class="show-selected-data">Male</span>
+                      <select class="edit-sheet-data">
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                      </select>
+                    </div>
+                    <div class="cell" style="width: 80px">
+                      <span class="show-selected-data">74</span>
+                      <input class="edit-sheet-data" type="number" value="74" />
+                    </div>
+                    <div class="cell" style="width: 130px">
+                      <span class="show-selected-data">1990-01-01</span>
+                      <input class="edit-sheet-data" type="date" />
+                    </div>
+                    <div class="cell" style="width: 300px">
+                      <div class="text-table-data-wrapper">
+                        <span class="show-selected-data text-table-data"
+                          >Lorem, ipsum dolor sit amet consectetur adipisicing
+                          elit.</span
+                        >
+                      </div>
+                      <input
+                        class="edit-sheet-data"
+                        type="text"
+                        value="Lorem, ipsum dolor sit amet consectetur adipisicing elit."
+                      />
+                    </div>
+                    <div class="cell" style="width: 80px">
+                      <span class="show-selected-data">true</span>
+                      <div class="edit-sheet-data">
+                        <label class="switch">
+                          <input type="checkbox" value="true" /><span
+                            class="slider"
+                          ></span>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="cell table-action-btns">
+                      <button class="move-up">Move Up</button>
+                      <button class="move-down">Move Down</button>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <li
+                class="mjs-nestedSortable-branch mjs-nestedSortable-expanded"
+                id="menuItem_6"
+              >
+                <div class="data-list-wrapper">
+                  <div class="sortable-row sortable-row-size">
+                    <div class="cell draggableButton">
+                      <i class="fa-solid fa-grip-vertical"></i>
+                    </div>
+                    <div class="cell">
+                      <span
+                        title="Click to show/hide children"
+                        class="disclose ui-icon ui-icon-minusthick"
+                      >
+                        <span></span>
+                      </span>
+                    </div>
+                    <div class="cell">
+                      <div class="save-btns">
+                        <i class="settings-btn fa-solid fa-gear"></i>
+                        <i class="save-list-btn fa-solid fa-floppy-disk"></i>
+                      </div>
+                    </div>
+                    <div class="cell" style="width: 140px">
+                      <span class="show-selected-data">Lorem Ipsum 6</span>
+                      <input
+                        class="edit-sheet-data"
+                        type="text"
+                        value="Lorem Ipsum 6"
+                      />
+                    </div>
+                    <div class="cell" style="width: 80px">
+                      <span class="show-selected-data">Male</span>
+                      <select class="edit-sheet-data">
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                      </select>
+                    </div>
+                    <div class="cell" style="width: 80px">
+                      <span class="show-selected-data">74</span>
+                      <input class="edit-sheet-data" type="number" value="74" />
+                    </div>
+                    <div class="cell" style="width: 130px">
+                      <span class="show-selected-data">1990-01-01</span>
+                      <input class="edit-sheet-data" type="date" />
+                    </div>
+                    <div class="cell" style="width: 300px">
+                      <div class="text-table-data-wrapper">
+                        <span class="show-selected-data text-table-data"
+                          >Lorem, ipsum dolor sit amet consectetur adipisicing
+                          elit.</span
+                        >
+                      </div>
+                      <input
+                        class="edit-sheet-data"
+                        type="text"
+                        value="Lorem, ipsum dolor sit amet consectetur adipisicing elit."
+                      />
+                    </div>
+                    <div class="cell" style="width: 80px">
+                      <span class="show-selected-data">false</span>
+                      <div class="edit-sheet-data">
+                        <label class="switch">
+                          <input type="checkbox" value="false" /><span
+                            class="slider"
+                          ></span>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="cell table-action-btns">
+                      <button class="move-up">Move Up</button>
+                      <button class="move-down">Move Down</button>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <li
+                class="mjs-nestedSortable-branch mjs-nestedSortable-expanded"
+                id="menuItem_7"
+              >
+                <div class="data-list-wrapper">
+                  <div class="sortable-row sortable-row-size">
+                    <div class="cell draggableButton">
+                      <i class="fa-solid fa-grip-vertical"></i>
+                    </div>
+                    <div class="cell">
+                      <span
+                        title="Click to show/hide children"
+                        class="disclose ui-icon ui-icon-minusthick"
+                      >
+                        <span></span>
+                      </span>
+                    </div>
+                    <div class="cell">
+                      <div class="save-btns">
+                        <i class="settings-btn fa-solid fa-gear"></i>
+                        <i class="save-list-btn fa-solid fa-floppy-disk"></i>
+                      </div>
+                    </div>
+                    <div class="cell" style="width: 140px">
+                      <span class="show-selected-data">Lorem Ipsum 7</span>
+                      <input
+                        class="edit-sheet-data"
+                        type="text"
+                        value="Lorem Ipsum 7"
+                      />
+                    </div>
+                    <div class="cell" style="width: 80px">
+                      <span class="show-selected-data">Male</span>
+                      <select class="edit-sheet-data">
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                      </select>
+                    </div>
+                    <div class="cell" style="width: 80px">
+                      <span class="show-selected-data">74</span>
+                      <input class="edit-sheet-data" type="number" value="74" />
+                    </div>
+                    <div class="cell" style="width: 130px">
+                      <span class="show-selected-data">1990-01-01</span>
+                      <input class="edit-sheet-data" type="date" />
+                    </div>
+                    <div class="cell" style="width: 300px">
+                      <div class="text-table-data-wrapper">
+                        <span class="show-selected-data text-table-data"
+                          >Lorem, ipsum dolor sit amet consectetur adipisicing
+                          elit.</span
+                        >
+                      </div>
+                      <input
+                        class="edit-sheet-data"
+                        type="text"
+                        value="Lorem, ipsum dolor sit amet consectetur adipisicing elit."
+                      />
+                    </div>
+                    <div class="cell" style="width: 80px">
+                      <span class="show-selected-data">false</span>
+                      <div class="edit-sheet-data">
+                        <label class="switch">
+                          <input type="checkbox" value="false" /><span
+                            class="slider"
+                          ></span>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="cell table-action-btns">
+                      <button class="move-up">Move Up</button>
+                      <button class="move-down">Move Down</button>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <li
+                class="mjs-nestedSortable-branch mjs-nestedSortable-expanded"
+                id="menuItem_8"
+              >
+                <div class="data-list-wrapper">
+                  <div class="sortable-row sortable-row-size">
+                    <div class="cell draggableButton">
+                      <i class="fa-solid fa-grip-vertical"></i>
+                    </div>
+                    <div class="cell">
+                      <span
+                        title="Click to show/hide children"
+                        class="disclose ui-icon ui-icon-minusthick"
+                      >
+                        <span></span>
+                      </span>
+                    </div>
+                    <div class="cell">
+                      <div class="save-btns">
+                        <i class="settings-btn fa-solid fa-gear"></i>
+                        <i class="save-list-btn fa-solid fa-floppy-disk"></i>
+                      </div>
+                    </div>
+                    <div class="cell" style="width: 140px">
+                      <span class="show-selected-data">Lorem Ipsum 8</span>
+                      <input
+                        class="edit-sheet-data"
+                        type="text"
+                        value="Lorem Ipsum 8"
+                      />
+                    </div>
+                    <div class="cell" style="width: 80px">
+                      <span class="show-selected-data">Male</span>
+                      <select class="edit-sheet-data">
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                      </select>
+                    </div>
+                    <div class="cell" style="width: 80px">
+                      <span class="show-selected-data">74</span>
+                      <input class="edit-sheet-data" type="number" value="74" />
+                    </div>
+                    <div class="cell" style="width: 130px">
+                      <span class="show-selected-data">1990-01-01</span>
+                      <input class="edit-sheet-data" type="date" />
+                    </div>
+                    <div class="cell" style="width: 300px">
+                      <div class="text-table-data-wrapper">
+                        <span class="show-selected-data text-table-data"
+                          >Lorem, ipsum dolor sit amet consectetur adipisicing
+                          elit.</span
+                        >
+                      </div>
+                      <input
+                        class="edit-sheet-data"
+                        type="text"
+                        value="Lorem, ipsum dolor sit amet consectetur adipisicing elit."
+                      />
+                    </div>
+                    <div class="cell" style="width: 80px">
+                      <span class="show-selected-data">true</span>
+                      <div class="edit-sheet-data">
+                        <label class="switch">
+                          <input type="checkbox" value="true" /><span
+                            class="slider"
+                          ></span>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="cell table-action-btns">
+                      <button class="move-up">Move Up</button>
+                      <button class="move-down">Move Down</button>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li
+                class="mjs-nestedSortable-branch mjs-nestedSortable-expanded"
+                id="menuItem_9"
+              >
+                <div class="data-list-wrapper">
+                  <div class="sortable-row sortable-row-size">
+                    <div class="cell draggableButton">
+                      <i class="fa-solid fa-grip-vertical"></i>
+                    </div>
+                    <div class="cell">
+                      <span
+                        title="Click to show/hide children"
+                        class="disclose ui-icon ui-icon-minusthick"
+                      >
+                        <span></span>
+                      </span>
+                    </div>
+                    <div class="cell">
+                      <div class="save-btns">
+                        <i class="settings-btn fa-solid fa-gear"></i>
+                        <i class="save-list-btn fa-solid fa-floppy-disk"></i>
+                      </div>
+                    </div>
+                    <div class="cell" style="width: 140px">
+                      <span class="show-selected-data">Lorem Ipsum 9</span>
+                      <input
+                        class="edit-sheet-data"
+                        type="text"
+                        value="Lorem Ipsum 9"
+                      />
+                    </div>
+                    <div class="cell" style="width: 80px">
+                      <span class="show-selected-data">Male</span>
+                      <select class="edit-sheet-data">
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                      </select>
+                    </div>
+                    <div class="cell" style="width: 80px">
+                      <span class="show-selected-data">74</span>
+                      <input class="edit-sheet-data" type="number" value="74" />
+                    </div>
+                    <div class="cell" style="width: 130px">
+                      <span class="show-selected-data">1990-01-01</span>
+                      <input class="edit-sheet-data" type="date" />
+                    </div>
+                    <div class="cell" style="width: 300px">
+                      <div class="text-table-data-wrapper">
+                        <span class="show-selected-data text-table-data"
+                          >Lorem, ipsum dolor sit amet consectetur adipisicing
+                          elit.</span
+                        >
+                      </div>
+                      <input
+                        class="edit-sheet-data"
+                        type="text"
+                        value="Lorem, ipsum dolor sit amet consectetur adipisicing elit."
+                      />
+                    </div>
+                    <div class="cell" style="width: 80px">
+                      <span class="show-selected-data">true</span>
+                      <div class="edit-sheet-data">
+                        <label class="switch">
+                          <input type="checkbox" value="true" /><span
+                            class="slider"
+                          ></span>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="cell table-action-btns">
+                      <button class="move-up">Move Up</button>
+                      <button class="move-down">Move Down</button>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li
+                class="mjs-nestedSortable-branch mjs-nestedSortable-expanded"
+                id="menuItem_10"
+              >
+                <div class="data-list-wrapper">
+                  <div class="sortable-row sortable-row-size">
+                    <div class="cell draggableButton">
+                      <i class="fa-solid fa-grip-vertical"></i>
+                    </div>
+                    <div class="cell">
+                      <span
+                        title="Click to show/hide children"
+                        class="disclose ui-icon ui-icon-minusthick"
+                      >
+                        <span></span>
+                      </span>
+                    </div>
+                    <div class="cell">
+                      <div class="save-btns">
+                        <i class="settings-btn fa-solid fa-gear"></i>
+                        <i class="save-list-btn fa-solid fa-floppy-disk"></i>
+                      </div>
+                    </div>
+                    <div class="cell" style="width: 140px">
+                      <span class="show-selected-data">Lorem Ipsum 10</span>
+                      <input
+                        class="edit-sheet-data"
+                        type="text"
+                        value="Lorem Ipsum 10"
+                      />
+                    </div>
+                    <div class="cell" style="width: 80px">
+                      <span class="show-selected-data">Male</span>
+                      <select class="edit-sheet-data">
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                      </select>
+                    </div>
+                    <div class="cell" style="width: 80px">
+                      <span class="show-selected-data">74</span>
+                      <input class="edit-sheet-data" type="number" value="74" />
+                    </div>
+                    <div class="cell" style="width: 130px">
+                      <span class="show-selected-data">1990-01-01</span>
+                      <input class="edit-sheet-data" type="date" />
+                    </div>
+                    <div class="cell" style="width: 300px">
+                      <div class="text-table-data-wrapper">
+                        <span class="show-selected-data text-table-data"
+                          >Lorem, ipsum dolor sit amet consectetur adipisicing
+                          elit.</span
+                        >
+                      </div>
+                      <input
+                        class="edit-sheet-data"
+                        type="text"
+                        value="Lorem, ipsum dolor sit amet consectetur adipisicing elit."
+                      />
+                    </div>
+                    <div class="cell" style="width: 80px">
+                      <span class="show-selected-data">true</span>
+                      <div class="edit-sheet-data">
+                        <label class="switch">
+                          <input type="checkbox" value="true" /><span
+                            class="slider"
+                          ></span>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="cell table-action-btns">
+                      <button class="move-up">Move Up</button>
+                      <button class="move-down">Move Down</button>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ol>
+          </div>
+          <div id="menu-draggable" style="display: none">
+            <div class="move-up menu-item">
+              <i class="fa-solid fa-arrow-up"></i> <span>Move to Up</span>
+            </div>
+            <div class="move-down menu-item">
+              <i class="fa-solid fa-arrow-down"></i> <span>Move to down</span>
+            </div>
+          </div>
+          <div class="tablepagination">
+            <div class="pagination_content">
+              <button class="btn btn-outline-dark prev">
+                <i class="fas fa-angle-left"></i>
+              </button>
+              <span class="page-numbers">Page 1 of 3</span>
+              <button class="btn btn-outline-dark next">
+                <i class="fas fa-angle-right"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h3>Try the custom methods:</h3>
+      <p>
+        <input
+          id="serialize"
+          name="serialize"
+          type="submit"
+          value="Serialize"
+        />
+      </p>
+      <pre id="serializeOutput"></pre>
+      <p>
+        <input id="toArray" name="toArray" type="submit" value="To array" />
+      </p>
+      <pre id="toArrayOutput"></pre>
+      <p>
+        <input
+          id="toHierarchy"
+          name="toHierarchy"
+          type="submit"
+          value="To hierarchy"
+        />
+      </p>
+      <pre id="toHierarchyOutput"></pre>
+    </section>
+    <!-- END #demo -->
+    <!-- <script src="./assets/javascript/bootstrap.bundle.min.js"></script> -->
+    <script src="./assets/javascript/jquery-3.6.4.min.js"></script>
+    <script src="./assets/javascript/jquery-ui.min.js"></script>
+    <script
+      type="text/javascript"
+      src="./assets/javascript/jquery.mjs.nestedSortable.js"
+    ></script>
+
+    <script>
+      $().ready(function () {
+        var ns = $("ol.sortable").nestedSortable({
+          forcePlaceholderSize: true,
+          handle: ".draggableButton",
+          helper: "clone",
+          items: "li",
+          opacity: 0.6,
+          placeholder: "placeholder",
+          revert: 250,
+          tabSize: 25,
+          tolerance: "pointer",
+          toleranceElement: "> div",
+          maxLevels: 0,
+          isTree: true,
+          expandOnHover: 700,
+          startCollapsed: false,
+          excludeRoot: true,
+          rootID: "root",
+        });
+
+        $(document).on("click", ".move-up", function () {
+          var currentItem = $(this).closest("li");
+          var prevItem = currentItem.prev("li");
+
+          console.log("prevItem", prevItem);
+
+          if (prevItem.length) {
+            console.log("event 1");
+            if (prevItem.find("ol").length) {
+              console.log("event 2");
+              currentItem.appendTo(prevItem.find("ol:first"));
+            } else {
+              console.log("event 3");
+              currentItem.insertBefore(prevItem);
+            }
+          }
+        });
+
+        $(document).on("click", ".move-down", function () {
+          var currentItem = $(this).closest("li");
+          var nextItem = currentItem.next("li");
+
+          if (nextItem.length) {
+            console.log("event 11");
+            if (nextItem.find("ol").length) {
+              console.log("event 12");
+              currentItem.appendTo(nextItem.find("ol:first"));
+            } else {
+              console.log("event 13");
+              currentItem.insertAfter(nextItem);
+            }
+          }
+          // else if (currentItem.parent().parent().is("li")) {
+          //   console.log("event 14");
+          //   currentItem.appendTo(currentItem.parent().parent().parent());
+          // }
+        });
+
+        // Add move up and move down functionality
+        // $(".move-up").click(function () {
+        //   var $item = $(this).closest("li");
+        //   var $prevItem = $item.prev("li");
+        //   console.log("$item", $prevItem);
+        //   if ($prevItem.length) {
+        //     console.log("event 0");
+        //     if ($prevItem.find("li").length) {
+        //       // If previous item has children, make current item a sibling of parent
+        //       console.log("event 1");
+        //       $prevItem.children("li:first-child").append($item);
+        //     } else {
+        //       // Otherwise, just change their order
+        //       console.log("event 2");
+        //       $item.insertBefore($prevItem);
+        //     }
+        //   } else {
+        //     console.log("event 3");
+        //     console.log("element not found");
+        //   }
+        //   $item.parents(".sortable").nestedSortable("refresh");
+        // });
+
+        // $(".move-down").click(function () {
+        //   var $item = $(this).closest("li");
+        //   var $nextItem = $item.next("li");
+        //   if ($nextItem.length) {
+        //     if ($nextItem.find("li").length) {
+        //       // If next item has children, make current item a child of last child
+        //       $nextItem
+        //         .children("td:first-child")
+        //         .children("li")
+        //         .last()
+        //         .after($item);
+        //     } else {
+        //       // Otherwise, just change their order
+        //       $item.insertAfter($nextItem);
+        //     }
+        //   }
+        //   $item.parents(".sortable").nestedSortable("refresh");
+        // });
+
+        // $(".move-up").click(function () {
+        //   var li = $(this).closest("li");
+        //   li.prev("li").before(li);
+        //   li.parents(".sortable").nestedSortable("refresh");
+        // });
+
+        // $(".move-down").click(function () {
+        //   var li = $(this).closest("li");
+        //   li.next("li").after(li);
+        //   li.parents(".sortable").nestedSortable("refresh");
+        // });
+
+        $(".settings-btn").on("click", function () {
+          $(this).hide();
+          $(this).parent().find(".save-list-btn").show();
+          $(this)
+            .parents(".data-list-wrapper")
+            .find(".show-selected-data")
+            .hide();
+          $(this).parents(".data-list-wrapper").find(".edit-sheet-data").show();
+        });
+
+        $(".save-list-btn").on("click", function () {
+          $(this).hide();
+          $(this).parent().find(".settings-btn").show();
+          $(this)
+            .parents(".data-list-wrapper")
+            .find(".show-selected-data")
+            .show();
+          $(this).parents(".data-list-wrapper").find(".edit-sheet-data").hide();
+        });
+
+        $(".data-list-wrapper").on("contextmenu", function (e) {
+          e.preventDefault();
+
+          var menu = $("#menu-draggable");
+          menu
+            .css({
+              top: e.pageY + "px",
+              left: e.pageX + "px",
+            })
+            .show();
+
+          $(document).on("click", function (e) {
+            if (!$(e.target).closest("#menu").length) {
+              menu.hide();
+            }
+          });
+        });
+        // // Move up button click handler
+        // $(".move-up").click(function () {
+        //   var current = $(this).closest("li");
+        //   var prev = current.prev("li");
+
+        //   // Check if the current item is a child
+        //   var isChild = current.parents("li").length > 0;
+
+        //   if (prev.length > 0) {
+        //     // If the previous item is a parent, move the current item up as a sibling
+        //     if (prev.children("ol").length > 0 && isChild) {
+        //       var parent = prev;
+        //       while (parent.children("ol").length > 0) {
+        //         parent = parent.children("ol").last().children("li").last();
+        //       }
+        //       current.insertBefore(parent);
+        //     } else {
+        //       prev.before(current);
+        //     }
+        //   }
+        // });
+
+        // // Move down button click handler
+        // $(".move-down").click(function () {
+        //   var current = $(this).closest("li");
+        //   var next = current.next("li");
+
+        //   // Check if the current item is a child
+        //   var isChild = current.parents("li").length > 0;
+
+        //   if (next.length > 0) {
+        //     // If the next item is a parent, move the current item down as a sibling
+        //     if (next.children("ol").length > 0 && isChild) {
+        //       var parent = next;
+        //       while (parent.children("ol").length > 0) {
+        //         parent = parent.children("ol").first().children("li").first();
+        //       }
+        //       current.insertAfter(parent);
+        //     } else {
+        //       next.after(current);
+        //     }
+        //   }
+        // });
+
+        // Move up button
+        // $(".sortable").on("click", ".move-up", function () {
+        //   var current = $(this).closest(".mjs-nestedSortable-branch");
+        //   var previous = current.prev(".mjs-nestedSortable-branch");
+
+        //   if (previous.length !== 0) {
+        //     current.insertBefore(previous);
+        //   }
+        // });
+
+        // Move down button
+        // $(".sortable").on("click", ".move-down", function () {
+        //   var current = $(this).closest(".mjs-nestedSortable-branch");
+        //   var next = current.next(".mjs-nestedSortable-branch");
+
+        //   if (next.length !== 0) {
+        //     current.insertAfter(next);
+        //   }
+        // });
+
+        $(".expandEditor").attr("title", "Click to show/hide item editor");
+        $(".disclose").attr("title", "Click to show/hide children");
+        $(".deleteMenu").attr("title", "Click to delete item.");
+
+        $(".disclose").on("click", function () {
+          $(this)
+            .closest("li")
+            .toggleClass("mjs-nestedSortable-collapsed")
+            .toggleClass("mjs-nestedSortable-expanded");
+          $(this)
+            .toggleClass("ui-icon-plusthick")
+            .toggleClass("ui-icon-minusthick");
+        });
+
+        $(".expandEditor, .itemTitle").click(function () {
+          var id = $(this).attr("data-id");
+          $("#menuEdit" + id).toggle();
+          $(this)
+            .toggleClass("ui-icon-triangle-1-n")
+            .toggleClass("ui-icon-triangle-1-s");
+        });
+
+        $(".deleteMenu").click(function () {
+          var id = $(this).attr("data-id");
+          $("#menuItem_" + id).remove();
+        });
+
+        $("#serialize").click(function () {
+          serialized = $("ol.sortable").nestedSortable("serialize");
+          $("#serializeOutput").text(serialized + "\n\n");
+        });
+
+        $("#toHierarchy").click(function (e) {
+          hiered = $("ol.sortable").nestedSortable("toHierarchy", {
+            startDepthCount: 0,
+          });
+          hiered = dump(hiered);
+          typeof $("#toHierarchyOutput")[0].textContent != "undefined"
+            ? ($("#toHierarchyOutput")[0].textContent = hiered)
+            : ($("#toHierarchyOutput")[0].innerText = hiered);
+        });
+
+        $("#toArray").click(function (e) {
+          arraied = $("ol.sortable").nestedSortable("toArray", {
+            startDepthCount: 0,
+          });
+          arraied = dump(arraied);
+          typeof $("#toArrayOutput")[0].textContent != "undefined"
+            ? ($("#toArrayOutput")[0].textContent = arraied)
+            : ($("#toArrayOutput")[0].innerText = arraied);
+        });
+      });
+
+      function dump(arr, level) {
+        var dumped_text = "";
+        if (!level) level = 0;
+
+        //The padding given at the beginning of the line.
+        var level_padding = "";
+        for (var j = 0; j < level + 1; j++) level_padding += "    ";
+
+        if (typeof arr == "object") {
+          //Array/Hashes/Objects
+          for (var item in arr) {
+            var value = arr[item];
+
+            if (typeof value == "object") {
+              //If it is an array,
+              console.log("object", arr[item]);
+              dumped_text += level_padding + "'" + arr[item] + "' ...\n";
+              dumped_text += dump(value, level + 1);
+            } else {
+              dumped_text +=
+                level_padding + "'" + item + "' => \"" + value + '"\n';
+            }
+          }
+        } else {
+          //Strings/Chars/Numbers etc.
+          dumped_text = "===>" + arr + "<===(" + typeof arr + ")";
+        }
+        return dumped_text;
+      }
+    </script>
+
+    <!-- <script src="./script.js"></script> -->
+  </body>
+</html>

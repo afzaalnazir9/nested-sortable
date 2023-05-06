@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data Table</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap4.min.css"
+    />
+  </head>
+  <style>
+    th {
+      background: blue;
+      color: white;
+    }
+    tr:nth-child(even) {
+      background-color: #dddddd;
+    }
+  </style>
+  <body>
+    <?php
+// Database credentials
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "applisoft_spa";
+
+// Create connection
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+
+// Check connection
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
+// SQL query to create table
+$sql = "CREATE TABLE IF NOT EXISTS CXS_PROJECTS (
+    project_id VARCHAR(8),
+    project_name VARCHAR(255),
+    description TEXT,
+    project_status VARCHAR(255),
+    project_manager VARCHAR(255),
+    schedule_start_date DATE,
+    schedule_end_date DATE,
+    actual_start_date DATE,
+    actual_end_date DATE,
+    schedule_baseline FLOAT,
+    cost_baseline FLOAT,
+    estimate_to_complete FLOAT,
+    total_budget FLOAT,
+    total_spend_to_date FLOAT,
+    action VARCHAR(255)
+)";
+
+$sql = "INSERT INTO projects (project_id, project_name, description, project_status, project_manager, schedule_start_date, schedule_end_date, actual_start_date, actual_end_date, schedule_baseline, cost_baseline, estimate_to_complete, total_budget, total_spend_to_date, action) VALUES ('CXS00013', 'JUMP START PROJECT', 'jump star', 'Draft', '0', '2019-09-12', '2019-09-12', '2019-09-12', '2019-09-12', NULL, NULL, 0, 0, 0, NULL)";
+
+
+
+mysqli_close($conn);
+?>
+
+    <table
+      id="example"
+      class="table table-striped table-bordered"
+      style="width: 100%"
+    >
+      <thead>
+        <tr>
+          <th>Project Id</th>
+          <th>Project Name</th>
+          <th>Description</th>
+          <th>Project Status</th>
+          <th>Project Manager</th>
+          <th>Schedule Start Date</th>
+          <th>Schedule End Date</th>
+          <th>Actual Start Date</th>
+          <th>Actual End Date</th>
+          <th>Schedule Baseline</th>
+          <th>Cost Baseline</th>
+          <th>Estimate To Complete</th>
+          <th>Total Biudget</th>
+          <th>Total Spend To Date</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>CXS00013</td>
+          <td>JUMP START PROJECT</td>
+          <td>jump star</td>
+          <td>Draft</td>
+          <td>0</td>
+          <td>12/09/2019</td>
+          <td>12/09/2019</td>
+          <td>12/09/2019</td>
+          <td>12/09/2019</td>
+          <td></td>
+          <td></td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>CXS00014</td>
+          <td>JUMP START PROJECT</td>
+          <td>jump star</td>
+          <td>Draft</td>
+          <td>0</td>
+          <td>12/09/2019</td>
+          <td>12/09/2019</td>
+          <td>12/09/2019</td>
+          <td>12/09/2019</td>
+          <td></td>
+          <td></td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td></td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td>CXS00015</td>
+          <td>JUMP START PROJECT</td>
+          <td>jump star</td>
+          <td>Draft</td>
+          <td>0</td>
+          <td>12/09/2019</td>
+          <td>12/09/2019</td>
+          <td>12/09/2019</td>
+          <td>12/09/2019</td>
+          <td></td>
+          <td></td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td></td>
+        </tr>
+      </tfoot>
+    </table>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap4.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#example").DataTable();
+      });
+    </script>
+  </body>
+</html>
